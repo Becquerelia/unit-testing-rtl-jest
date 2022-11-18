@@ -1,5 +1,5 @@
-import { render, cleanup } from '@testing-library/react';
-import LoginForm from '../pages/LoginForm';
+import { render, cleanup, screen } from '@testing-library/react';
+import { LoginForm } from '../pages/LoginForm';
 
 describe('LoginForm', () => {
     afterEach(cleanup);
@@ -10,6 +10,6 @@ describe('LoginForm', () => {
     });
 
     it('should display two inputs', () => {
-        render
-    })
+        expect(screen.getByLabelText(/nombre de usuario/i)).toBeInTheDocument();
+    });
 }); 

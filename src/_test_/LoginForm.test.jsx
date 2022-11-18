@@ -2,8 +2,14 @@ import { render } from '@testing-library/react';
 import LoginForm from '../pages/LoginForm';
 
 describe('LoginForm', () => {
-    it('should render correctly', () => {
-        const container = render(<LoginForm />);
-        expect(container).toBeTruthy();
+    afterEach(cleanup);
+    afterEach(jest.clearAllMocks);
+    
+    beforeAll(()=> {
+        render(<LoginForm />);
     });
+
+    it('should display two inputs', () => {
+        render
+    })
 }); 

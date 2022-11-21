@@ -66,7 +66,7 @@ export const LoginForm = () => {
       <Box color="grey.600" mt="10px">
         {values.username && values.password && (
           <>
-            <Typography>Username: {values.username}</Typography>
+            <Typography data-testid="gengar">Username: {values.username}</Typography>
             <Typography>Password: {values.password}</Typography>
           </>
         )}

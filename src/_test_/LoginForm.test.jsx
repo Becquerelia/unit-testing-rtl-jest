@@ -49,12 +49,13 @@ describe('LoginForm', () => {
         const passwordInput = screen.getByLabelText(/contraseña/i);
         const submitButton = screen.getByRole('button', { name: /login/i });        
 
-        await userEvent.type(usernameInput, LoginFormMock.username);
-        await userEvent.type(passwordInput, LoginFormMock.password);
+        await userEvent.type(usernameInput, LoginFormMockError.username);
+        await userEvent.type(passwordInput, LoginFormMockError.password);
 
         await waitFor(() => {
           expect(usernameInput).toHaveValue(LoginFormMockError.username);
-          expect(passwordInput).toHaveValue(LoginFormMockError.password);                         
+          expect(passwordInput).toHaveValue(LoginFormMockError.password);
+          expect(submitButton).toBeDisabled();                         
         });
     });    
     
